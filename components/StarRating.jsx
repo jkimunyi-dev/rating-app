@@ -5,10 +5,10 @@ import { useState } from "react";
 
 const createArray = (length) => [...Array(length)];
 
-const StarRating = ({ totalStars = 5 }) => {
+const StarRating = ({ style = {}, totalStars = 5, ...props }) => {
   const [selectedStars, setSelectedStars] = useState(0);
   return (
-    <>
+    <div style={{ padding: "10px", ...style }} {...props}>
       {createArray(totalStars).map((n, i) => (
         <Star
           key={i}
@@ -19,7 +19,7 @@ const StarRating = ({ totalStars = 5 }) => {
       <p>
         {selectedStars} of {totalStars} stars{" "}
       </p>
-    </>
+    </div>
   );
 };
 
