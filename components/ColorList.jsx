@@ -1,7 +1,15 @@
 import React from "react";
+import Color from "./Color";
 
-const ColorList = ({ colors }) => {
-  return <div>ColorList</div>;
+const ColorList = ({ colors = [] }) => {
+  if (!colors.length) return <div> No colors listed </div>;
+  return (
+    <div>
+      {colors.map((color) => (
+        <Color key={color.id} {...color} />
+      ))}
+    </div>
+  );
 };
 
 export default ColorList;
