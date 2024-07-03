@@ -7,6 +7,7 @@ const createArray = (length) => [...Array(length)];
 
 const StarRating = ({ style = {}, totalStars = 5, ...props }) => {
   const [selectedStars, setSelectedStars] = useState(0);
+
   return (
     <div style={{ padding: "10px", ...style }} {...props}>
       {createArray(totalStars).map((n, i) => (
